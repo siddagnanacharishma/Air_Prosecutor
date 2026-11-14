@@ -407,8 +407,9 @@ export default function Dashboard() {
           <MapContainer center={[22,80]} zoom={5}
             style={{ width:"100%", height:"100%" }} zoomControl={false}>
             <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-              attribution="CartoDB"
+              url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+attribution="&copy; OpenStreetMap contributors"
+className="dark-tiles"
             />
             {cities.map(c => (
               <PulsingMarker key={c.key} city={c}
