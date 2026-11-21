@@ -64,6 +64,9 @@ CITIES = {
 }
 
 app = FastAPI(title="Air Prosecutor API")
+@app.api_route("/health", methods=["GET", "HEAD"])
+def health():
+    return {"status": "ok"}
 
 app.add_middleware(
     CORSMiddleware,
@@ -374,3 +377,4 @@ def get_history(city: str, days: int = 7):
         "daily_avg": daily_avg,
         "timestamp": datetime.now().isoformat()
     }
+   
